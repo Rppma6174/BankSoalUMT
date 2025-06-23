@@ -311,9 +311,14 @@
         }
 
         .category-ujian { background-color: #e67e22; color: white; }
+        .category-ujian-free { background-color: #e67e22; color: white; }
         .category-hots { background-color: #9b59b6; color: white; }
+        .category-hots-free { background-color: #9b59b6; color: white; }
         .category-mots { background-color: #1abc9c; color: white; }
+        .category-mots-free { background-color: #1abc9c; color: white; }
         .category-lots { background-color: #34495e; color: white; }
+        .category-lots-free { background-color: #34495e; color: white; }
+        .category-free { background-color: #28a745	; color: white; }
 
         .card-actions {
             display: flex;
@@ -607,6 +612,25 @@ footer::before {
         gap: 10px;
     }
 }
+.category {
+  display: flex;           /* Supaya elemen di dalamnya berjejer */               /* Jarak antara PAS dan Gratis */
+}
+.category-ujian-free{
+    margin-right: 5px;
+}
+.category-hots-free{
+    margin-right: 5px;
+}
+.category-mots-free{
+    margin-right: 5px;
+}
+.category-lots-free{
+    margin-right: 5px;
+}
+.category-free {
+    margin-left: 5px;
+}
+
     </style>
 </head>
 <body>
@@ -657,7 +681,10 @@ footer::before {
                             <p class="card-subtitle">Kelas X - Matematika</p>
                         </div>
                     </div>
-                    <div class="card-category category-ujian">PAS</div>
+                    <div class="category"> 
+                        <div class="card-category category-ujian-free">PAS</div>
+                        <div class="card-category category-free">Gratis</div>
+                    </div>
                     <div class="card-actions">
                         <button class="action-btn btn-primary" onclick="openMateriModal('Penilaian Akhir Semester (PAS)', 'pas-matematika-1')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1laZRE9QRazlCv7QAjwecnVPBwXtWF0RY" class="action-btn btn-secondary">Download Soal</a>
@@ -676,7 +703,10 @@ footer::before {
                             
                         </div>
                     </div>
-                    <div class="card-category category-ujian">PAS</div>
+                    <div class="category"> 
+                        <div class="card-category category-ujian-free">PAS</div>
+                        <div class="card-category category-free">Gratis</div>
+                    </div>
                     <div class="card-actions">
                         <button class="action-btn btn-primary" onclick="openMateriModal('Penilaian Akhir Semester (PAS)', 'pas-matematika-2')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1Ahc2VlVDNOvRLkxRoYdSBsDvg4Irj8o-" class="action-btn btn-secondary">Download Soal</a>
@@ -740,7 +770,10 @@ footer::before {
                             <p class="card-subtitle">Matematika</p>
                         </div>
                     </div>
-                    <div class="card-category category-hots">HOTS</div>
+                    <div class="category"> 
+                        <div class="card-category category-hots-free">PAS</div>
+                        <div class="card-category category-free">Gratis</div>
+                    </div>
                     <div class="card-actions">
                         <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-hots-1')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1i6ZsSGTUUn4PPD7NCixlC_-FZKdV-v7d" class="action-btn btn-secondary">Download Soal</a>
@@ -758,7 +791,10 @@ footer::before {
                             <p class="card-subtitle">Matematika</p>
                         </div>
                     </div>
-                    <div class="card-category category-hots">HOTS</div>
+                    <div class="category"> 
+                        <div class="card-category category-hots-free">PAS</div>
+                        <div class="card-category category-free">Gratis</div>
+                    </div>
                     <div class="card-actions">
                         <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-hots-2')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1jvhZ-SDQV2kfIeiHRu-J2idIJA8uyDKc" class="action-btn btn-secondary">Download Soal</a>
@@ -980,7 +1016,10 @@ footer::before {
                             <p class="card-subtitle">Matematika</p>
                         </div>
                     </div>
-                    <div class="card-category category-mots">MOTS</div>
+                    <div class="category"> 
+                        <div class="card-category category-mots-free">PAS</div>
+                        <div class="card-category category-free">Gratis</div>
+                    </div>
                     <div class="card-actions">
                         <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-mots-1')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1FF1qnnVgZiwZOHab4hS6koKdqFsjf5ga" class="action-btn btn-secondary">Download Soal</a>
@@ -998,7 +1037,10 @@ footer::before {
                             <p class="card-subtitle">Matematika</p>
                         </div>
                     </div>
-                    <div class="card-category category-mots">MOTS</div>
+                    <div class="category"> 
+                        <div class="card-category category-mots-free">PAS</div>
+                        <div class="card-category category-free">Gratis</div>
+                    </div>
                     <div class="card-actions">
                         <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-mots-2')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1ik5_RlBbOVwevgAVNzjIuv_8vxnX0tY7" class="action-btn btn-secondary">Download Soal</a>
@@ -1223,7 +1265,10 @@ footer::before {
                             <p class="card-subtitle">Matematika</p>
                         </div>
                     </div>
-                    <div class="card-category category-lots">LOTS</div>
+                    <div class="category"> 
+                        <div class="card-category category-lots-free">PAS</div>
+                        <div class="card-category category-free">Gratis</div>
+                    </div>
                     <div class="card-actions">
                         <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-lots-1')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1iBjIemDZEvTgojlk7SzfF-j-gAdYGu6n" class="action-btn btn-secondary">Download Soal</a>
@@ -1241,7 +1286,10 @@ footer::before {
                             <p class="card-subtitle">Matematika</p>
                         </div>
                     </div>
-                    <div class="card-category category-lots">LOTS</div>
+                    <div class="category"> 
+                        <div class="card-category category-lots-free">PAS</div>
+                        <div class="card-category category-free">Gratis</div>
+                    </div>
                     <div class="card-actions">
                         <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-lots-2')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1z1j4I-nMONmHXOGkY7mmaHw8KxGWm8z2" class="action-btn btn-secondary">Download Soal</a>
