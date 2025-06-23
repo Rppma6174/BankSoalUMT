@@ -24,7 +24,7 @@
             padding: 20px;
         }
 
-        .breadcrumb {
+        /* .breadcrumb {
             margin-bottom: 30px;
             font-size: 14px;
             color: #888;
@@ -39,6 +39,111 @@
 
         .breadcrumb a:hover {
             color: #fff;
+        } */
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .breadcrumb-arrow {
+            color: #666;
+        }
+
+        .breadcrumb-link {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .breadcrumb-link:hover {
+            color: white;
+        }
+
+        .breadcrumb-current {
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown-toggle:hover {
+            color: #007bff;
+        }
+
+        .dropdown-arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 8px;
+            min-width: 200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 16px;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #333;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-item:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dropdown-item:hover {
+            background: #007bff;
+            color: white;
         }
 
         h1 {
@@ -507,9 +612,23 @@ footer::before {
 <body>
     <div class="container">
         <nav class="breadcrumb">
-            <a href="https://www.umt6174.site/" class="breadcrumb-link" target="_blank">Home</a> 
-            <span> > </span>
-            <span class="breadcrumb-current">Bank Soal UMT</span>
+            <a href="https://www.umt6174.site/" class="breadcrumb-link" target="_blank">Home</a>
+            <span class="breadcrumb-arrow">›</span>
+            <div class="dropdown" id="umtDropdown">
+                <span class="dropdown-toggle">
+                    Bank Soal UMT
+                <span class="dropdown-arrow">▼</span>
+                </span>
+            <div class="dropdown-menu">
+                <a href="https://www.umt6174.site/" class="dropdown-item">Home</a>
+                <a href="https://lab.umt6174.site/umt-lab" class="dropdown-item">UMT Lab</a>
+                <a href="https://sites.google.com/view/banksoalumt6174/bank-soal-umt" class="dropdown-item">Bank Soal UMT</a>
+                <a href="https://www.umt6174.site/materi-belajar" class="dropdown-item">Materi Pembelajaran</a>
+                <a href="https://www.umt6174.site/video-pembelajaran" class="dropdown-item">Video Pembelajaran</a>
+                <a href="https://www.umt6174.site/tryout-umt" class="dropdown-item">Tryout</a>
+                <a href="https://www.umt6174.site/tanya-umt" class="dropdown-item">TanyaUMT</a>
+            </div>
+            </div>
         </nav>
 
         <h1>Bank Soal UMT</h1>
@@ -623,7 +742,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-1')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-hots-1')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1i6ZsSGTUUn4PPD7NCixlC_-FZKdV-v7d" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/qchrvMkZqC7ivwe86" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -641,7 +760,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-2')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-hots-2')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1jvhZ-SDQV2kfIeiHRu-J2idIJA8uyDKc" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/pv49orPmWcsDR9sb6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -659,7 +778,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-3')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Akar Pangkat','matematika-hots-3')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1c9zIsWBJPWktg2j11fdWzkZRc5a7_XPo" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/wp8v55W4VhMxArW49" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -677,7 +796,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-4')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Kuadrat','matematika-hots-4')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1wRueS3dp4_Mi1xC8Yg6kYvoC5ksyq0pW" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/eY7CpyEXEEqdFsdp6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -695,7 +814,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-5')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Kuadrat','matematika-hots-5')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=11NH7oncKQLDBFHNY5LurDDzPVkWJooDw" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/Ptgo3nDF2oGqcYQBA" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -713,7 +832,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-6')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Induksi Matematika','matematika-hots-6')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=12mvWn5DmR3XYahPZxvsBdTnF1KJIRR90" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/hPDDLuEyjT3vR5oR6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -731,7 +850,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-7')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Pola Bilangan','matematika-hots-7')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1S3kWq6nqkJN5YwYLoFw-YDyTawFiTPg7" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/h8LrTZHHv7vgtao79" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -749,7 +868,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-8')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Trigonometri','matematika-hots-8')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1FuBG9Fakzfom_r7DFMLCSQu-7kajK4bf" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/6AkMuvEgyQKvCtin9" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -767,7 +886,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-9')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Komposisi dan Invers','matematika-hots-9')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/6AkMuvEgyQKvCtin9" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -785,7 +904,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-10')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Matriks','matematika-hots-10')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1Z2QYkkSoCyzeUEuEzu0pTDhJl6a-IDhV" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/ZijcFNb7aJbUqYQQ7" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -803,7 +922,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-11')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Trigonometri','matematika-hots-11')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1pPyHH35j-LvAAwU34KlBprXpfYqygnjs" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/3LXfR1A1oLKfV2S46" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -821,7 +940,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-12')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Suku Banyak / Polinomial','matematika-hots-12')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1Rhxs8wYNw1I3sC21kFDPa3IqIdj4Rd1J" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/SNNGcHc4uJqd1DRr6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -839,7 +958,7 @@ footer::before {
                     </div>
                     <div class="card-category category-hots">HOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-hots-13')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Logika Matematika','matematika-hots-13')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1beShn_KVIpBMii_N05b2sGvrnpNECfxM" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/uq1FdXRhLxUuhjcz8" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -863,7 +982,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-1')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-mots-1')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1FF1qnnVgZiwZOHab4hS6koKdqFsjf5ga" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/xk3AiqmL1em5NZjh7" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -881,7 +1000,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-2')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-mots-2')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1ik5_RlBbOVwevgAVNzjIuv_8vxnX0tY7" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/skxMHwNCoZ7frvvV6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -899,7 +1018,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-3')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Akar Pangkat','matematika-mots-3')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1M8P4qkpkHhvYK56Q8z5BduI9nJAFfpfL" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/iMPSi4GKRrmN8Q1r7" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -917,7 +1036,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-4')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Kuadrat','matematika-mots-4')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=11LNVj-nPfr7AcuYCJDwbvhDZlO3iyCmj" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/yBh6UUR5EYVtiYhC8" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -935,7 +1054,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-5')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Kuadrat','matematika-mots-5')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1-_VwkGUODMqvMEwjSe_1ZFHhGlobPwtE" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/vFy7cHXwyrr2ygyL6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -953,7 +1072,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-6')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Induksi Matematika','matematika-mots-6')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1uQsgJOjv4irjvmDSDnwvpW_YmpAt1gbn" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/KVMQLFZGYK5NuamR7" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -971,7 +1090,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-7')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Pola Bilangan','matematika-mots-7')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1G8Vh_t5OQ3WuVUZH3lPy3M1zlfhio8CZ" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/BAVkHXQKF6iNhhjp8" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -989,7 +1108,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-8')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Trigonometri','matematika-mots-8')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=189RL6baO9ybPldJ3iThcnkfKEFMTZsXk" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/c83bbq7K4dHhxjV38" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1009,7 +1128,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-9')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Komposisi dan Invers','matematika-mots-9')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/6AkMuvEgyQKvCtin9" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1027,7 +1146,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-10')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Matriks','matematika-mots-10')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1MNdWN54aZkIW1C06oSfN4uGSH0HuwIJj" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/mpVgvSqyCr5a7T9V9" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1045,7 +1164,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-11')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Trigonometri','matematika-mots-11')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1ellHO16HWp7-lnOYS7m_zc3UAlH3npqm" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/RsQZFH9uAPRkbGDP6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1063,7 +1182,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-12')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Suku Banyak / Polinomial','matematika-mots-12')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1DvxtIfgRTGe5PV82sC9e4GtQas9UNCgs" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/MkpjwYrpsKo13otH8" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1081,7 +1200,7 @@ footer::before {
                     </div>
                     <div class="card-category category-mots">MOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-mots-13')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Logika Matematika','matematika-mots-13')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1IGNEjuw8u_y5CCx82GBLU0CiOa2EqEKm" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/Gh1v7b4MPdVRh9He7" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1106,7 +1225,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-1')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-lots-1')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1iBjIemDZEvTgojlk7SzfF-j-gAdYGu6n" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/pWLLtdcVVRuhVXdW6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1124,7 +1243,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-2')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-lots-2')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1z1j4I-nMONmHXOGkY7mmaHw8KxGWm8z2" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/UuDfiP8ohHd6RqN57" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1142,7 +1261,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-3')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Akar Pangkat','matematika-lots-3')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1bdxmcazV6klSeaPm5K-JorlHG1y6_cL1" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/fCPHJC77Mb3Ame7A9" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1160,7 +1279,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-4')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Kuadrat','matematika-lots-4')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1dFT2G2SgECqtUviPGT064WLuqFFeHGAX" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/dWmKQkgxPpMwSNnp7" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1178,7 +1297,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-5')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Kuadrat','matematika-lots-5')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1N7LK0FuxqRhljvZn4x5RN_7_g6JWYRso" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/ejNfL98ExnvJ3W5Z6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1196,7 +1315,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-6')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Induksi Matematika','matematika-lots-6')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1EuAQXjGeByhTwSlKHZkYpeA-SeuzfXPN" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/wggrMXHYHaNxQJMv8" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1214,7 +1333,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-7')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Pola Bilangan','matematika-lots-7')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1SnSYGI39LcLIB94wMMDYm81kDdaiHTFk" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/2iH3Cu2QW82Lbra99" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1232,7 +1351,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-8')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Trigonometri','matematika-lots-8')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1IbX6HHchgxPqGkDP3ZRuWF30Qsb1mjiw" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/Fmkf8a6onku7JZxm9" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1250,7 +1369,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-9')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Komposisi dan Invers','matematika-lots-9')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/6AkMuvEgyQKvCtin9" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1268,7 +1387,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-10')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Matriks','matematika-lots-10')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1xQB9v90BH6qlFnG2ccAZ9sRGcajQV73K" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/EjvxqTP6fYqg5WNJA" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1286,7 +1405,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-11')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Trigonometri','matematika-lots-11')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1oUe-Wae5wxAd1hNVBh5-_lfvCfRhjZTT" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/ShJ9fv5dKXBNAGSa6" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1304,7 +1423,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-12')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Suku Banyak / Polinomial','matematika-lots-12')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1g0yhmycBMEg1TFXp3kcg_VL9lHf9_zWg" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/Febi4tk5Ah3n3P7t9" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -1322,7 +1441,7 @@ footer::before {
                     </div>
                     <div class="card-category category-lots">LOTS</div>
                     <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('matematika-lots-13')">Lihat Materi</button>
+                        <button class="action-btn btn-primary" onclick="openMateriModal('Logika Matematika','matematika-lots-13')">Lihat Materi</button>
                         <a href="https://drive.google.com/uc?export=download&id=1OGCtdNgi81Hut9i41LwRupnrv4y6g884" class="action-btn btn-secondary">Download Soal</a>
                         <a href="https://forms.gle/dTPRFnQtKQ1GgN318" class="action-btn btn-accent">Kerjakan Sekarang</a>
                     </div>
@@ -2136,6 +2255,26 @@ footer::before {
             if (event.key === 'Escape') {
                 closeMateriModal();
             }
+        });
+        // Dropdown functionality
+        const dropdown = document.getElementById('umtDropdown');
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+        dropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+        }
+        });
+
+        // Prevent dropdown from closing when clicking inside the menu
+        dropdown.querySelector('.dropdown-menu').addEventListener('click', (e) => {
+        e.stopPropagation();
         });
     </script>
 </body>
