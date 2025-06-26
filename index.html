@@ -1866,137 +1866,666 @@ function closeMateriModal() {
 
 function getMateriContent(materiId) {
     const materiData = {
-        'pas-matematika-1': `
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Fungsi, Persamaan, dan Pertidaksamaan Nilai Mutlak
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Persamaan Nilai Mutlak Linear I, Pertidaksamaan Nilai Mutlak Linear
-                </div>
-            </div>
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Sistem Persamaan Linear
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Sistem Persamaan Linear Tiga Variabel (SPLTV)
-                </div>
-            </div>
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Matriks
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Operasi Hitung Matriks
-                </div>
-            </div>
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Fungsi, Persamaan, dan Pertidaksamaan Linear
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Fungsi Linear
-                </div>
-            </div>
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Fungsi
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Menentukan Domain dan Range Fungsi, Operasi Fungsi
-                </div>
-            </div>
-        `,
-        
-        'matematika-hots-1': `
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Relasi dan Fungsi
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
-                </div>
-            </div>
-        `,
+    // Ujian
+                'pas-matematika-1': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi, Persamaan, dan Pertidaksamaan Nilai Mutlak
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Persamaan Nilai Mutlak Linear I, Pertidaksamaan Nilai Mutlak Linear
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Sistem Persamaan Linear
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Sistem Persamaan Linear Tiga Variabel (SPLTV)
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Matriks
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Operasi Hitung Matriks
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi, Persamaan, dan Pertidaksamaan Linear
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Fungsi Linear
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Aljabar Fungsi, Jenis Fungsi, Relasi Dan Fungsi
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Komposisi dan Invers
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Fungsi Komposisi, Fungsi Invers, Invers Fungsi Komposisi
+                        </div>
+                    </div>
+                `,
 
-        'matematika-hots-2': `
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                     Eksponensial 
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
-                </div>
-            </div>
-        `,
+                'pas-matematika-2': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi, Persamaan, dan Pertidaksamaan Kuadrat
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Prasyarat: Fungsi Kuadrat, Pertidaksamaan Kuadrat, Prasyarat: Persamaan Kuadrat
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Sistem Persamaan & Pertidaksamaan Linear-Kuadrat Dua Variabel (SPLKDV)
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Sistem Pertidaksamaan Linear Dua Variabel, Sistem Persamaan dan Pertidaksamaan Linear Kuadrat Dua Variabel
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi, Persamaan, dan Pertidaksamaan Linear
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Persamaan Linear, Pertidaksamaan Linear
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Sistem Persamaan Linear
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Sistem Persamaan Linear Tiga Variabel (SPLTV), Prasyarat: SPLDV
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi, Persamaan, dan Pertidaksamaan Rasional
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pertidaksamaan Rasional
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi, Persamaan, dan Pertidaksamaan Irasional (Bentuk Akar)
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pertidaksamaan Irasional (Bentuk Akar)
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Barisan dan Deret
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Prasyarat: Barisan dan Deret 
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi, Persamaan, dan Pertidaksamaan Nilai Mutlak 
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pertidaksamaan Nilai Mutlak Linear, Fungsi Nilai Mutlak, Persamaan Nilai Mutlak Linear I, Pertidaksamaan Nilai Mutlak Nonlinear
+                        </div>
+                    </div>
+                `,
+
+                'pas-matematika-3': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Persamaan Linear
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Persamaan Linear Sederhana, Persamaan dengan Pecahan, Persamaan dengan Variabel di Kedua Sisi, Persamaan Eksponen
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Pertidaksamaan Linear
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pertidaksamaan Linear Sederhana, Pertidaksamaan dengan Pecahan, Pertidaksamaan dengan Variabel di Kedua Sisi, Pertidaksamaan dengan Koefisien Negatif
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Geometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Segitiga (Luas, Keliling, Sisi Miring), Lingkaran (Luas, Keliling, Jari-jari), Persegi Panjang, Persegi, Jajar Genjang, Trapesium, Volume Bangun Ruang(Balok, Kubus, Tabung), Teorema Pythagoras
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Deret Aritmetika/Geometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Suku ke-n Deret Aritmetika/Geometri, Jumlah Suku Pertama Deret Aritmetika/Geometri, Rasio atau Beda dalam Deret, Aplikasi Deret dalam Soal Cerita
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Trigonometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Identitas Trigonometri Dasar (sin, cos, tan), Nilai Trigonometri di Berbagai Kuadran, Hubungan Antara Sudut-sudut Istimewa, Aplikasi Trigonometri dalam Soal Cerita
+                        </div>
+                    </div>
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Statistika
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Rata-rata (Mean), Median, Modus, Aplikasi Statistika dalam Soal Cerita
+                        </div>
+                    </div>
+                `,
+                // HOTS
         
-        'matematika-hots-3': `
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Akar Pangkat 
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
-                </div>
-            </div>
-        `,
+                'matematika-hots-1': `More actions
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Relasi dan Fungsi
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-2': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                             Eksponensial 
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-3': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Akar Pangkat 
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-4': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Persamaan Kuadrat
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Persamaan Kuadrat, Faktorisasi pada Persamaan Kuadrat, Kuadrat Sempurna dan Rumus Kuadratik, Jumlah, Hasil Kali, dan Selisih Akar Persamaan Kuadrat, Menyusun Persamaan Kuadrat Baru
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-5': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Kuadrat
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengenalan Fungsi Kuadrat, Titik Potong Sumbu, Titik Puncak, Menentukan Fungsi Kuadrat dari Parabola
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-6': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Induksi Matematika
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Konsep Dasar Induksi Matematika, Induksi Matematika 1 (Kesamaan), Induksi Matematika 2 (Ketaksamaan), Induksi Matematika 3 (Keterbagian)
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-7': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Pola Bilangan
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Barisan dan deret Aritmetika, Barisan dan deret Geometri
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-8': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Trigonometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Derajat dan radian, Perbandingan sisi (Trigonometri), Sudut Istimewa (Trigonometri), Kuadran Pada Trigonometri, Fungsi Trigonometri, Sudut Berelasi 1, Sudut Berelasi 2, Identitas Trigonometri, Aturan Sinus, Aturan Cosinus
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-9': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Komposisi dan Invers
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Fungsi Komposisi, Fungsi Invers, Invers Fungsi Komposisi
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-10': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Matriks
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Matriks, Operasi Hitung Matriks, Invers Matriks, Determinan Matriks. Invers Matriks 3×3, Aplikasi Matriks
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-11': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Persamaan Trigonometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Persamaan Trigonometri Dasar, Persamaan Trigonometri Lanjutan
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-12': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Suku Banyak / Polinomial
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Suku Banyak, Operasi Hitung Suku Banyak, Teorema sisa dan faktor, Persamaan dan Pertiadaksamaan Suku Banyak
+                        </div>
+                    </div>
+                `,
+
+                'matematika-hots-13': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Logika Matematika
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Kalimat, konjungsi dan disjungsi , implikasi dan biimplikasi, ingkaran dan ekuivalensi, penarikan kesimpulan
+                        </div>
+                    </div>
+                `,
+                // MOTS 
 
         'matematika-mots-1': `
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Relasi dan Fungsi
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
-                </div>
-            </div>
-        `,
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Relasi dan Fungsi
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
+                        </div>
+                    </div>
+                `,
 
-        'matematika-mots-2': `
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                     Eksponensial 
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
-                </div>
-            </div>
-        `,
-        
-        'matematika-mots-3': `
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Akar Pangkat 
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
-                </div>
-            </div>
-        `,
+                'matematika-mots-2': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                             Eksponensial 
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
+                        </div>
+                    </div>
+                `,
 
-        'matematika-lots-1': `
-            <div class="materi-item">
-                <div class="materi-title">
-                    <span class="materi-icon">⚡</span>
-                    Relasi dan Fungsi
-                </div>
-                <div class="materi-subtitle">
-                    Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
-                </div>
-            </div>
-        `
+                'matematika-mots-3': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Akar Pangkat 
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-4': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Persamaan Kuadrat
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Persamaan Kuadrat, Faktorisasi pada Persamaan Kuadrat, Kuadrat Sempurna dan Rumus Kuadratik, Jumlah, Hasil Kali, dan Selisih Akar Persamaan Kuadrat, Menyusun Persamaan Kuadrat Baru
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-5': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Kuadrat
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengenalan Fungsi Kuadrat, Titik Potong Sumbu, Titik Puncak, Menentukan Fungsi Kuadrat dari Parabola
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-6': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Induksi Matematika
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Konsep Dasar Induksi Matematika, Induksi Matematika 1 (Kesamaan), Induksi Matematika 2 (Ketaksamaan), Induksi Matematika 3 (Keterbagian)
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-7': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Pola Bilangan
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Barisan dan deret Aritmetika, Barisan dan deret Geometri
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-8': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Trigonometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Derajat dan radian, Perbandingan sisi (Trigonometri), Sudut Istimewa (Trigonometri), Kuadran Pada Trigonometri, Fungsi Trigonometri, Sudut Berelasi 1, Sudut Berelasi 2, Identitas Trigonometri, Aturan Sinus, Aturan Cosinus
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-9': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Komposisi dan Invers
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Fungsi Komposisi, Fungsi Invers, Invers Fungsi Komposisi
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-10': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Matriks
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Matriks, Operasi Hitung Matriks, Invers Matriks, Determinan Matriks. Invers Matriks 3×3, Aplikasi Matriks
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-11': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Persamaan Trigonometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Persamaan Trigonometri Dasar, Persamaan Trigonometri Lanjutan
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-12': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Suku Banyak / Polinomial
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Suku Banyak, Operasi Hitung Suku Banyak, Teorema sisa dan faktor, Persamaan dan Pertiadaksamaan Suku Banyak
+                        </div>
+                    </div>
+                `,
+
+                'matematika-mots-13': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Logika Matematika
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Kalimat, konjungsi dan disjungsi , implikasi dan biimplikasi, ingkaran dan ekuivalensi, penarikan kesimpulan
+                        </div>
+                    </div>
+                `,
+                // LOTS
+
+                'matematika-lots-1': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Relasi dan Fungsi
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-2': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                             Eksponensial 
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-3': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Akar Pangkat 
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-4': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Persamaan Kuadrat
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Persamaan Kuadrat, Faktorisasi pada Persamaan Kuadrat, Kuadrat Sempurna dan Rumus Kuadratik, Jumlah, Hasil Kali, dan Selisih Akar Persamaan Kuadrat, Menyusun Persamaan Kuadrat Baru
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-5': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Kuadrat
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengenalan Fungsi Kuadrat, Titik Potong Sumbu, Titik Puncak, Menentukan Fungsi Kuadrat dari Parabola
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-6': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Induksi Matematika
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Konsep Dasar Induksi Matematika, Induksi Matematika 1 (Kesamaan), Induksi Matematika 2 (Ketaksamaan), Induksi Matematika 3 (Keterbagian)
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-7': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Pola Bilangan
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Barisan dan deret Aritmetika, Barisan dan deret Geometri
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-8': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Trigonometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Derajat dan radian, Perbandingan sisi (Trigonometri), Sudut Istimewa (Trigonometri), Kuadran Pada Trigonometri, Fungsi Trigonometri, Sudut Berelasi 1, Sudut Berelasi 2, Identitas Trigonometri, Aturan Sinus, Aturan Cosinus
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-9': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Fungsi Komposisi dan Invers
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Fungsi Komposisi, Fungsi Invers, Invers Fungsi Komposisi
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-10': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Matriks
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Matriks, Operasi Hitung Matriks, Invers Matriks, Determinan Matriks. Invers Matriks 3×3, Aplikasi Matriks
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-11': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Persamaan Trigonometri
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Persamaan Trigonometri Dasar, Persamaan Trigonometri Lanjutan
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-12': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Suku Banyak / Polinomial
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Pengertian Suku Banyak, Operasi Hitung Suku Banyak, Teorema sisa dan faktor, Persamaan dan Pertiadaksamaan Suku Banyak
+                        </div>
+                    </div>
+                `,
+
+                'matematika-lots-13': `
+                    <div class="materi-item">
+                        <div class="materi-title">
+                            <span class="materi-icon">⚡</span>
+                            Logika Matematika
+                        </div>
+                        <div class="materi-subtitle">
+                            Subbab: Kalimat, konjungsi dan disjungsi , implikasi dan biimplikasi, ingkaran dan ekuivalensi, penarikan kesimpulan
+                        </div>
+                    </div>
+                `
     };
     
     return materiData[materiId] || `
