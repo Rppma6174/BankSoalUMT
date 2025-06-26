@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Soal UMT</title>
+    <title>Bank Soal UMT - Platform Pembelajaran Digital</title>
+    <meta name="description" content="Bank soal lengkap untuk PAS, PTS, UAS, UTS, HOTS, MOTS, dan LOTS dari UMT">
     <style>
         * {
             margin: 0;
@@ -18,29 +19,19 @@
             min-height: 100vh;
         }
 
+        /* Header Section */
+        .header {
+            background: #141414;
+            padding: 0px 0px 10px 0px;
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 20px 0px 20px;
         }
 
-        /* .breadcrumb {
-            margin-bottom: 30px;
-            font-size: 14px;
-            color: #888;
-            font-weight: 400;
-        }
-
-        .breadcrumb a {
-            color: #888;
-            text-decoration: none;
-            font-weight: 400;
-        }
-
-        .breadcrumb a:hover {
-            color: #fff;
-        } */
-
+        /* Breadcrumb Navigation */
         .breadcrumb {
             display: flex;
             align-items: center;
@@ -48,10 +39,6 @@
             margin-bottom: 20px;
             font-size: 14px;
             color: #888;
-        }
-
-        .breadcrumb-arrow {
-            color: #666;
         }
 
         .breadcrumb-link {
@@ -64,13 +51,33 @@
         .breadcrumb-link:hover {
             color: white;
         }
-
+        .breadcrumb-arrow {
+            color: #666;
+        }
         .breadcrumb-current {
             color: white;
             font-weight: 500;
         }
 
         /* Dropdown Styles */
+        /* .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            color: var(--text-primary);
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: var(--transition);
+            background: rgba(74, 144, 226, 0.1);
+        } */
+
         .dropdown {
             position: relative;
             display: inline-block;
@@ -146,47 +153,155 @@
             color: white;
         }
 
-        h1 {
-            font-size: 2rem;
+        /* Main Title */
+        .main-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
-            margin-bottom: 30px;
-            color: #ffffff;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
         }
 
-        .tabs {
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tab Navigation */
+        /* .tabs {
             display: flex;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #333;
+            justify-content: center;
+            margin-bottom: 3rem;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 8px;
+            border: 1px solid var(--border-color);
             flex-wrap: wrap;
+            gap: 4px;
+        } */
+
+        /* .tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .tabs::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #333;
         }
 
         .tab {
-            padding: 15px 30px;
+            padding: 12px 24px;
             background: none;
             border: none;
             color: #888;
             cursor: pointer;
-            font-size: 14px;
-            font-weight: 400;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
             transition: all 0.3s ease;
-            border-bottom: 2px solid transparent;
+            position: relative;
+            z-index: 1;
+            font-size: 16px;
+            flex-wrap: nowrap;
         }
 
         .tab.active {
             color: white;
-            font-weight: 500;
-            border-bottom-color: #007bff;
+            border-bottom-color: white;
+            font-size: 16px;
         }
 
         .tab:hover {
-            color: #fff;
+            color: white;
         }
+        .tab:hover:not(.active) {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        } */
 
+        .tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    flex-wrap: nowrap; /* Paksa tidak wrap ke baris baru */
+}
+
+.tabs::-webkit-scrollbar { /* WebKit */
+    display: none;
+}
+
+.tabs::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #333;
+}
+
+.tab {
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    flex-shrink: 0; /* Tidak boleh mengecil */
+    min-width: fit-content;
+    flex-basis: auto; /* Ukuran otomatis sesuai konten */
+}
+
+.tab.active {
+    color: white;
+    border-bottom-color: white;
+    font-size: 14px;
+}
+
+.tab:hover {
+    color: white;
+}
+
+.tab:hover:not(.active) {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+        /* Search Container */
         .search-container {
-            margin-bottom: 40px;
+            position: relative;
+            margin-bottom: 3rem;
         }
 
-        .search-box {
+        .search-input {
             width: 100%;
             padding: 15px 20px;
             background: #333;
@@ -194,193 +309,581 @@
             border-radius: 50px;
             color: white;
             font-size: 16px;
-            font-weight: 400;
             outline: none;
             transition: border-color 0.3s ease;
         }
 
-        .search-box::placeholder {
-            color: #666;
-            font-weight: 400;
+        .search-input:focus {
+            border-color: #888;
+            box-shadow: #888;
         }
 
+        .search-input::placeholder {
+            color: #888;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
+        /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .card {
-            animation: fadeInUp 0.6s ease forwards;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            border-radius: 15px;
-            padding: 25px;
+            background: linear-gradient(145deg, #2a2a2a 0%, #1f1f1f 100%);
+            border-radius: 16px;
+            padding: 24px;
             border: 1px solid #333;
             transition: all 0.3s ease;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #4a90e2;
-            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-card);
         }
 
-        .card-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 15px;
-            flex: 1;
-        }
-
-        .card-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            flex-shrink: 0;
-            margin: 0px auto;
+        .card:hover::before {
+            transform: scaleX(1);
         }
 
         .card-content {
-            flex: 1;
-            min-width: 0;
+            padding: 24px;
+        }
+
+        .card-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            display: flex;
             align-items: center;
-            margin: auto auto;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .card-title {
-            font-size: 1.3rem;
-            font-weight: 500;
+            font-size: 1.25rem;
+            font-weight: 600;
             margin-bottom: 8px;
-            color: #fff;
-            line-height: 1.3;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+            color: var(--text-primary);
+            line-height: 1.4;
+            text-align: center;
         }
 
-        .card-subtitle {
+        .card-author {
             color: #888;
             font-size: 14px;
-            font-weight: 400;
-            margin-bottom: 10px;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+            margin-bottom: 12px;
+            text-align: center;
         }
 
-        .card-rating {
+        .category {
             display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 15px;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .star {
-            color: #ffd700;
-            font-size: 14px;
-        }
-
-        .rating-number {
-            color: #888;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-        .card-category {
-            display: inline-block;
-            padding: 6px 15px;
+        .card-tag {
+            padding: 6px 12px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 500;
-            margin: 0px auto 15px auto;
-            width: fit-content;
+            color: white;
         }
 
-        .card-category category-ujian {
-            margin: 0px auto;
+        .tag-ujian { background: linear-gradient(135deg, #e67e22, #d35400); }
+        .tag-hots { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .tag-mots { background: linear-gradient(135deg, #1abc9c, #16a085); }
+        .tag-lots { background: linear-gradient(135deg, #34495e, #2c3e50); }
+
+        .tag-free {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+    border: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+.tag-free:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+/* Tag Premium */
+.tag-premium {
+    background: linear-gradient(135deg, #007bff, #6f42c1);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    border: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+.tag-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.tag-premium:hover::before {
+    left: 100%;
+}
+
+.tag-premium:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+/* Variasi dengan Icon */
+.tag-free-icon::before {
+    content: '🆓';
+    margin-right: 4px;
+}
+
+.tag-premium-icon::before {
+    content: '⭐';
+    margin-right: 4px;
+}
+
+/* Variasi Outline */
+.tag-free-outline {
+    background: transparent;
+    color: #28a745;
+    border: 2px solid #28a745;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.tag-free-outline:hover {
+    background: #28a745;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.tag-premium-outline {
+    background: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.tag-premium-outline:hover {
+    background: #007bff;
+    color: white;
+    transform: translateY(-1px);
+}
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 40px 0;
+            flex-wrap: wrap;
         }
 
-        .category-ujian { background-color: #e67e22; color: white; }
-        .category-ujian-free { background-color: #e67e22; color: white; }
-        .category-hots { background-color: #9b59b6; color: white; }
-        .category-hots-free { background-color: #9b59b6; color: white; }
-        .category-mots { background-color: #1abc9c; color: white; }
-        .category-mots-free { background-color: #1abc9c; color: white; }
-        .category-lots { background-color: #34495e; color: white; }
-        .category-lots-free { background-color: #34495e; color: white; }
-        .category-free { background-color: #28a745	; color: white; }
+        .pagination-btn {
+            background: #333;
+            border: 1px solid #444;
+            color: #888;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            min-width: 40px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-        .card-actions {
+        .pagination-btn:hover:not(.disabled) {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .pagination-btn.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-ellipsis {
+            color: #888;
+            padding: 10px 5px;
+            font-size: 14px;
+        }
+
+        .pagination-nav {
+            background: #333;
+            border: 1px solid #444;
+            color: #888;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pagination-nav:hover:not(.disabled) {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .pagination-nav.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .loading::after {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 12px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-state-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* .container {
+                padding: 0 16px;
+            }
+
+            .header {
+                padding: 1.5rem 0;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .tab {
+                text-align: center;
+                padding: 16px;
+            }
+
+            .breadcrumb {
+                font-size: 12px;
+                gap: 8px;
+            }
+
+            .pagination-container {
+                gap: 4px;
+                padding: 0 16px;
+            }
+
+            .pagination-btn,
+            .pagination-nav {
+                padding: 8px 12px;
+                font-size: 12px;
+                min-width: 36px;
+            }
+            .tombol {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
             margin-top: auto;
+            } */
+
+            .container {
+        padding: 0 16px;
+    }
+
+    .header {
+        padding: 1.5rem 0;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Tabs tetap horizontal dengan ukuran yang disesuaikan */
+    .tab {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    .tab.active {
+    color: white;
+    border-bottom-color: white;
+    font-size: 13px;
+}
+
+    .breadcrumb {
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .pagination-container {
+        gap: 4px;
+        padding: 0 16px;
+    }
+
+    .pagination-btn,
+    .pagination-nav {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 36px;
+    }
+    
+    .tombol {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-image {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    /* Tabs dengan padding lebih kecil tapi tetap horizontal */
+    .tab {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .tab.active {
+    color: white;
+    border-bottom-color: white;
+    font-size: 12px;
+}
+
+}
+        .tombol {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 16px;
+            flex-wrap: wrap;
         }
 
-        .action-btn {
-            padding: 8px 16px;
+        /* Base button styles */
+        .download-button,
+        .kerjakan-button, 
+        .lihat-button {
+            flex: 1;
+            min-width: 90px;
+            max-width: 120px;
+            padding: 10px 12px;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-primary {
-            background-color: #4a90e2;
+        /* Individual button colors */
+        .download-button {
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: white;
         }
 
-        .btn-primary:hover {
-            background-color: #357abd;
-        }
-
-        .btn-secondary {
-            background-color: #50c878;
+        .kerjakan-button {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
             color: white;
         }
 
-        .btn-secondary:hover {
-            background-color: #3ea060;
-        }
-
-        .btn-accent {
-            background-color: #e74c3c;
+        .lihat-button {
+            background: linear-gradient(135deg, #6c757d, #545b62);
             color: white;
         }
 
-        .btn-accent:hover {
-            background-color: #c0392b;
+        /* Hover effects */
+        .download-button:hover {
+            background: linear-gradient(135deg, #0056b3, #004085);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
         }
 
-        .tab-content {
-            display: none;
+        .kerjakan-button:hover {
+            background: linear-gradient(135deg, #1e7e34, #155724);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
         }
 
-        .tab-content.active {
-            display: block;
+        .lihat-button:hover {
+            background: linear-gradient(135deg, #545b62, #3d4142);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
         }
 
-        /* Modal Styles */
+        /* Active state */
+        .download-button:active,
+        .kerjakan-button:active,
+        .lihat-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+
         .modal {
             display: none;
             position: fixed;
@@ -479,43 +982,7 @@
             padding-left: 24px;
         }
 
-        @media (max-width: 768px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .card-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .card-actions {
-                justify-content: center;
-            }
-            
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .modal-content {
-                width: 95%;
-                margin: 10% auto;
-            }
-
-            .modal-header, .modal-body {
-                padding: 20px;
-            }
-
-            .action-btn {
-                font-size: 11px;
-                padding: 6px 12px;
-            }
-        }
-        .breadcrumb-current {
-            color: white;
-            font-weight: 500;
-        }
-                footer {
+                                footer {
     background-color: #141414;
     color: white;
     padding: 20px;
@@ -539,13 +1006,17 @@ footer::before {
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
+    align-items: center;
+    margin: 20px;
 }
 
 .footer-section {
     flex: 1;
     min-width: 250px;
+    
+    justify-content: center;
 }
 
 .footer-section h3 {
@@ -616,893 +1087,81 @@ footer::before {
         gap: 10px;
     }
 }
-.category {
-  display: flex;           /* Supaya elemen di dalamnya berjejer */               /* Jarak antara PAS dan Gratis */
+.content.active {
+    margin: 0px 20px 0px 20px;
 }
-.category-ujian-free{
-    margin-right: 5px;
-}
-.category-hots-free{
-    margin-right: 5px;
-}
-.category-mots-free{
-    margin-right: 5px;
-}
-.category-lots-free{
-    margin-right: 5px;
-}
-.category-free {
-    margin-left: 5px;
+
+@media (max-width: 480px) {
+    .recent-materials {
+        margin: 30px 10px 10px 10px
+    }
 }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="breadcrumb">
-            <a href="https://www.umt6174.site/" class="breadcrumb-link" target="_blank">Home</a>
-            <span class="breadcrumb-arrow">›</span>
-            <div class="dropdown" id="umtDropdown">
-                <span class="dropdown-toggle">
-                    Bank Soal UMT
-                <span class="dropdown-arrow">▼</span>
-                </span>
-            <div class="dropdown-menu">
-                <a href="https://www.umt6174.site/" class="dropdown-item" target="_blank">Home</a>
-                <a href="https://lab.umt6174.site/umt-lab" class="dropdown-item" target="_blank">UMT Lab</a>
-                <a href="https://sites.google.com/view/banksoalumt6174/bank-soal-umt" class="dropdown-item" target="_blank">Bank Soal UMT</a>
-                <a href="https://www.umt6174.site/materi-belajar" class="dropdown-item" target="_blank">Materi Pembelajaran</a>
-                <a href="https://www.umt6174.site/video-pembelajaran" class="dropdown-item" target="_blank">Video Pembelajaran</a>
-                <a href="https://www.umt6174.site/tryout-umt" class="dropdown-item" target="_blank">Tryout</a>
-                <a href="https://www.umt6174.site/tanya-umt" class="dropdown-item" target="_blank">TanyaUMT</a>
-            </div>
-            </div>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="https://www.umt6174.site/" class="breadcrumb-link" target="_blank">Home</a>
+                <span class="breadcrumb-arrow">›</span>
+                <div class="dropdown" id="umtDropdown">
+                    <span class="dropdown-toggle">
+                        Bank Soal UMT
+                        <span class="dropdown-arrow">▼</span>
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="https://www.umt6174.site/" class="dropdown-item" target="_blank">Home</a>
+                        <a href="https://lab.umt6174.site/umt-lab" class="dropdown-item" target="_blank">UMT Lab</a>
+                        <a href="https://sites.google.com/view/banksoalumt6174/bank-soal-umt" class="dropdown-item" target="_blank">Bank Soal UMT</a>
+                        <a href="https://www.umt6174.site/materi-belajar" class="dropdown-item" target="_blank">Materi Pembelajaran</a>
+                        <a href="https://www.umt6174.site/video-pembelajaran" class="dropdown-item" target="_blank">Video Pembelajaran</a>
+                        <a href="https://www.umt6174.site/tryout-umt" class="dropdown-item" target="_blank">Tryout</a>
+                        <a href="https://www.umt6174.site/tanya-umt" class="dropdown-item" target="_blank">TanyaUMT</a>
+                    </div>
+                </div>
+            </nav>
+            <h1 class="title">Bank Soal UMT</h1>
+        </div>
 
-        <h1>Bank Soal UMT</h1>
+    </header>
 
-        <div class="tabs">
-            <button class="tab active" onclick="showTab('ujian')">PAS, PTS, UAS & UTS</button>
-            <button class="tab" onclick="showTab('hots')">HOTS</button>
-            <button class="tab" onclick="showTab('mots')">MOTS</button>
-            <button class="tab" onclick="showTab('lots')">LOTS</button>
+    <main class="container">
+        <div class="tabs" >
+            <button class="tab active">Semua</button>
+            <button class="tab" data-tab="ujian">PAS, PTS, UAS & UTS</button>
+            <button class="tab" data-tab="hots">HOTS</button>
+            <button class="tab" data-tab="mots">MOTS</button>
+            <button class="tab" data-tab="lots">LOTS</button>
         </div>
 
         <div class="search-container">
-            <input type="text" class="search-box" placeholder="Cari..." oninput="searchCards(this.value)">
+            <input type="text" class="search-input" placeholder="Cari bank soal..." id="searchInput">
+            <div class="search-icon">🔍</div>
         </div>
 
-        <!-- Ujian Tab Content -->
-        <div id="ujian" class="tab-content active">
-            <div class="cards-grid">
-                <div class="card" data-category="ujian">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Penilaian Akhir Semester (PAS) #1</h3>
-                            <p class="card-subtitle">Kelas X - Matematika</p>
-                        </div>
-                    </div>
-                    <div class="category"> 
-                        <div class="card-category category-ujian-free">PAS</div>
-                        <div class="card-category category-free">Gratis</div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Penilaian Akhir Semester (PAS)', 'pas-matematika-1')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1laZRE9QRazlCv7QAjwecnVPBwXtWF0RY" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="#" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
+        <div class="cards-grid" id="cardsGrid">
+            <!-- Cards akan diisi oleh JavaScript -->
+        </div>
 
-                <div class="card" data-category="ujian">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Penilaian Akhir Semester (PAS) #2</h3>
-                            <p class="card-subtitle">Kelas X - Matematika</p>
-                            
-                        </div>
-                    </div>
-                    <div class="category"> 
-                        <div class="card-category category-ujian-free">PAS</div>
-                        <div class="card-category category-free">Gratis</div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Penilaian Akhir Semester (PAS)', 'pas-matematika-2')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1Ahc2VlVDNOvRLkxRoYdSBsDvg4Irj8o-" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="#" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
+        <div class="pagination-container" id="paginationContainer">
+            <!-- Pagination akan diisi oleh JavaScript -->
+        </div>
+    </main>
 
-                <div class="card" data-category="ujian">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Penilaian Akhir Semester (PAS) #3</h3>
-                            <p class="card-subtitle">Kelas X - Matematika</p>
-                            
-                        </div>
-                    </div>
-                    <div class="card-category category-ujian">PAS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Penilaian Akhir Semester (PAS)', 'pas-matematika-3')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1Cw5mK5cRgOFHP2zfMi81BIQWjgNj04bk" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="#" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <!-- <div class="card" data-category="ujian">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Ujian Tengah Semester (UTS)</h3>
-                            <p class="card-subtitle">Semester Genap - Biologi</p>
-                            <div class="card-rating">
-                                <span class="star">★</span>
-                                <span class="rating-number">4.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-category category-ujian">UTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Penilaian Akhir Semester (PAS)', 'pas-matematika-1')">Lihat Materi</button>
-                        <a href="#" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="#" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div> -->
-                
+    <div id="materiModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title">Materi yang Diuji</h2>
+                <span class="close" onclick="closeMateriModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
             </div>
         </div>
+    </div>
 
-        <!-- HOTS Tab Content -->
-        <div id="hots" class="tab-content">
-            <div class="cards-grid">
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Relasi Dan Fungsi</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="category"> 
-                        <div class="card-category category-hots-free">PAS</div>
-                        <div class="card-category category-free">Gratis</div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-hots-1')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1i6ZsSGTUUn4PPD7NCixlC_-FZKdV-v7d" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/qchrvMkZqC7ivwe86" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Eksponensial (Perpangkatan)</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="category"> 
-                        <div class="card-category category-hots-free">PAS</div>
-                        <div class="card-category category-free">Gratis</div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-hots-2')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1jvhZ-SDQV2kfIeiHRu-J2idIJA8uyDKc" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/pv49orPmWcsDR9sb6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Akar Pangkat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Akar Pangkat','matematika-hots-3')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1c9zIsWBJPWktg2j11fdWzkZRc5a7_XPo" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/wp8v55W4VhMxArW49" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Persamaan Kuadrat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Kuadrat','matematika-hots-4')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1wRueS3dp4_Mi1xC8Yg6kYvoC5ksyq0pW" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/eY7CpyEXEEqdFsdp6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Kuadrat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Kuadrat','matematika-hots-5')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=11NH7oncKQLDBFHNY5LurDDzPVkWJooDw" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/Ptgo3nDF2oGqcYQBA" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Induksi Matematika</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Induksi Matematika','matematika-hots-6')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=12mvWn5DmR3XYahPZxvsBdTnF1KJIRR90" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/hPDDLuEyjT3vR5oR6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Pola Bilangan</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Pola Bilangan','matematika-hots-7')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1S3kWq6nqkJN5YwYLoFw-YDyTawFiTPg7" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/h8LrTZHHv7vgtao79" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Trigonometri</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Trigonometri','matematika-hots-8')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1FuBG9Fakzfom_r7DFMLCSQu-7kajK4bf" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/6AkMuvEgyQKvCtin9" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Komposisi dan Invers</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Komposisi dan Invers','matematika-hots-9')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/6AkMuvEgyQKvCtin9" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Matriks</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Matriks','matematika-hots-10')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1Z2QYkkSoCyzeUEuEzu0pTDhJl6a-IDhV" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/ZijcFNb7aJbUqYQQ7" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Persamaan Trigonometri</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Trigonometri','matematika-hots-11')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1pPyHH35j-LvAAwU34KlBprXpfYqygnjs" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/3LXfR1A1oLKfV2S46" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Suku Banyak / Polinomial</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Suku Banyak / Polinomial','matematika-hots-12')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1Rhxs8wYNw1I3sC21kFDPa3IqIdj4Rd1J" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/SNNGcHc4uJqd1DRr6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="hots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Logika Matematika</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-hots">HOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Logika Matematika','matematika-hots-13')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1beShn_KVIpBMii_N05b2sGvrnpNECfxM" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/uq1FdXRhLxUuhjcz8" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- MOTS Tab Content -->
-        <div id="mots" class="tab-content">
-            <div class="cards-grid">
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Relasi Dan Fungsi</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="category"> 
-                        <div class="card-category category-mots-free">PAS</div>
-                        <div class="card-category category-free">Gratis</div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-mots-1')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1FF1qnnVgZiwZOHab4hS6koKdqFsjf5ga" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/xk3AiqmL1em5NZjh7" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Eksponensial (Perpangkatan)</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="category"> 
-                        <div class="card-category category-mots-free">PAS</div>
-                        <div class="card-category category-free">Gratis</div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-mots-2')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1ik5_RlBbOVwevgAVNzjIuv_8vxnX0tY7" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/skxMHwNCoZ7frvvV6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Akar Pangkat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Akar Pangkat','matematika-mots-3')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1M8P4qkpkHhvYK56Q8z5BduI9nJAFfpfL" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/iMPSi4GKRrmN8Q1r7" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Persamaan Kuadrat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Kuadrat','matematika-mots-4')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=11LNVj-nPfr7AcuYCJDwbvhDZlO3iyCmj" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/yBh6UUR5EYVtiYhC8" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Kuadrat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Kuadrat','matematika-mots-5')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1-_VwkGUODMqvMEwjSe_1ZFHhGlobPwtE" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/vFy7cHXwyrr2ygyL6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Induksi Matematika</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Induksi Matematika','matematika-mots-6')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1uQsgJOjv4irjvmDSDnwvpW_YmpAt1gbn" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/KVMQLFZGYK5NuamR7" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Pola Bilangan</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Pola Bilangan','matematika-mots-7')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1G8Vh_t5OQ3WuVUZH3lPy3M1zlfhio8CZ" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/BAVkHXQKF6iNhhjp8" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Trigonometri</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Trigonometri','matematika-mots-8')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=189RL6baO9ybPldJ3iThcnkfKEFMTZsXk" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/c83bbq7K4dHhxjV38" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-                
-                <!-- khususs MOTS -->
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Komposisi dan Invers</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Komposisi dan Invers','matematika-mots-9')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/6AkMuvEgyQKvCtin9" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Matriks</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Matriks','matematika-mots-10')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1MNdWN54aZkIW1C06oSfN4uGSH0HuwIJj" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/mpVgvSqyCr5a7T9V9" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Persamaan Trigonometri</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Trigonometri','matematika-mots-11')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1ellHO16HWp7-lnOYS7m_zc3UAlH3npqm" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/RsQZFH9uAPRkbGDP6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Suku Banyak / Polinomial</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Suku Banyak / Polinomial','matematika-mots-12')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1DvxtIfgRTGe5PV82sC9e4GtQas9UNCgs" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/MkpjwYrpsKo13otH8" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="mots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Logika Matematika</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-mots">MOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Logika Matematika','matematika-mots-13')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1IGNEjuw8u_y5CCx82GBLU0CiOa2EqEKm" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/Gh1v7b4MPdVRh9He7" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- LOTS Tab Content -->
-
-        <div id="lots" class="tab-content">
-            <div class="cards-grid">
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Relasi Dan Fungsi</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="category"> 
-                        <div class="card-category category-lots-free">PAS</div>
-                        <div class="card-category category-free">Gratis</div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Relasi Dan Fungsi','matematika-lots-1')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1iBjIemDZEvTgojlk7SzfF-j-gAdYGu6n" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/pWLLtdcVVRuhVXdW6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Eksponensial (Perpangkatan)</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="category"> 
-                        <div class="card-category category-lots-free">PAS</div>
-                        <div class="card-category category-free">Gratis</div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Eksponensial (Perpangkatan)','matematika-lots-2')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1z1j4I-nMONmHXOGkY7mmaHw8KxGWm8z2" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/UuDfiP8ohHd6RqN57" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Akar Pangkat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Akar Pangkat','matematika-lots-3')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1bdxmcazV6klSeaPm5K-JorlHG1y6_cL1" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/fCPHJC77Mb3Ame7A9" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Persamaan Kuadrat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Kuadrat','matematika-lots-4')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1dFT2G2SgECqtUviPGT064WLuqFFeHGAX" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/dWmKQkgxPpMwSNnp7" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Kuadrat</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Kuadrat','matematika-lots-5')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1N7LK0FuxqRhljvZn4x5RN_7_g6JWYRso" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/ejNfL98ExnvJ3W5Z6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Induksi Matematika</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Induksi Matematika','matematika-lots-6')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1EuAQXjGeByhTwSlKHZkYpeA-SeuzfXPN" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/wggrMXHYHaNxQJMv8" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Pola Bilangan</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Pola Bilangan','matematika-lots-7')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1SnSYGI39LcLIB94wMMDYm81kDdaiHTFk" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/2iH3Cu2QW82Lbra99" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Trigonometri</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Trigonometri','matematika-lots-8')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1IbX6HHchgxPqGkDP3ZRuWF30Qsb1mjiw" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/Fmkf8a6onku7JZxm9" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Fungsi Komposisi dan Invers</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Fungsi Komposisi dan Invers','matematika-lots-9')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/6AkMuvEgyQKvCtin9" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Matriks</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Matriks','matematika-lots-10')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1xQB9v90BH6qlFnG2ccAZ9sRGcajQV73K" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/EjvxqTP6fYqg5WNJA" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Persamaan Trigonometri</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Persamaan Trigonometri','matematika-lots-11')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1oUe-Wae5wxAd1hNVBh5-_lfvCfRhjZTT" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/ShJ9fv5dKXBNAGSa6" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Suku Banyak / Polinomial</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Suku Banyak / Polinomial','matematika-lots-12')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1g0yhmycBMEg1TFXp3kcg_VL9lHf9_zWg" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/Febi4tk5Ah3n3P7t9" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="lots">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
-                            📝
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Logika Matematika</h3>
-                            <p class="card-subtitle">Matematika</p>
-                        </div>
-                    </div>
-                    <div class="card-category category-lots">LOTS</div>
-                    <div class="card-actions">
-                        <button class="action-btn btn-primary" onclick="openMateriModal('Logika Matematika','matematika-lots-13')">Lihat Materi</button>
-                        <a href="https://drive.google.com/uc?export=download&id=1OGCtdNgi81Hut9i41LwRupnrv4y6g884" class="action-btn btn-secondary">Download Soal</a>
-                        <a href="https://forms.gle/dTPRFnQtKQ1GgN318" class="action-btn btn-accent">Kerjakan Sekarang</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <footer>
+    <footer>
         <div class="footer-container">
             <div class="footer-section">
             <h3>Tentang Kami</h3>
@@ -1537,797 +1196,1127 @@ footer::before {
           <a href="https://www.tiktok.com/@umt6174?is_from_webapp=1&sender_device=pc"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok"></a>
         </div>
         </div>
-        </footer>
-    </div>
+    </footer>
 
-    <!-- Modal untuk Materi -->
-    <div id="materiModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle" class="modal-title">Materi yang Diuji</h2>
-                <span class="close" onclick="closeMateriModal()">&times;</span>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Content will be populated by JavaScript -->
+
+    <script>
+        // Data kartu
+const cardsData = [
+    // UJIAN
+    {
+        id: 1,
+        title: "Penilaian Akhir Semester (PAS) #1",
+        author: "Tim UMT",
+        category: "ujian",
+        free: "free",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1laZRE9QRazlCv7QAjwecnVPBwXtWF0RY",
+        kerjakan: "#",
+        nama: 'Penilaian Akhir Semester (PAS)',
+        indeks: 'pas-matematika-1'
+    },
+    {
+        id: 2,
+        title: "Penilaian Akhir Semester (PAS) #2",
+        author: "Tim UMT",
+        category: "ujian",
+        free: "free",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1Ahc2VlVDNOvRLkxRoYdSBsDvg4Irj8o-",
+        kerjakan: "#",
+        nama: 'Penilaian Akhir Semester (PAS)',
+        indeks: 'pas-matematika-2'
+    },
+    {
+        id: 3,
+        title: "Penilaian Akhir Semester (PAS) #3",
+        author: "Tim UMT",
+        category: "ujian",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1Cw5mK5cRgOFHP2zfMi81BIQWjgNj04bk",
+        kerjakan: "#",
+        nama: 'Penilaian Akhir Semester (PAS)',
+        indeks: 'pas-matematika-3'
+    },
+    // HOTS
+    {
+        id: 4,
+        title: "Relasi dan Fungsi",
+        author: "Tim UMT",
+        category: "hots",
+        free: "free",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1i6ZsSGTUUn4PPD7NCixlC_-FZKdV-v7d",
+        kerjakan: "https://forms.gle/qchrvMkZqC7ivwe86",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-1"
+    },
+    {
+        id: 5,
+        title: "Eksponensial (Perpangkatan)",
+        author: "Tim UMT",
+        category: "hots",
+        free: "free",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1jvhZ-SDQV2kfIeiHRu-J2idIJA8uyDKc",
+        kerjakan: "https://forms.gle/pv49orPmWcsDR9sb6",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-2"
+    },
+    {
+        id: 6,
+        title: "Akar Pangkat",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1c9zIsWBJPWktg2j11fdWzkZRc5a7_XPo",
+        kerjakan: "https://forms.gle/wp8v55W4VhMxArW49",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-3"
+    },
+    {
+        id: 7,
+        title: "Persamaan Kuadrat",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1wRueS3dp4_Mi1xC8Yg6kYvoC5ksyq0pW",
+        kerjakan: "https://forms.gle/eY7CpyEXEEqdFsdp6",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-4"
+    },
+    {
+        id: 8,
+        title: "Fungsi Kuadrat",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=11NH7oncKQLDBFHNY5LurDDzPVkWJooDw",
+        kerjakan: "https://forms.gle/Ptgo3nDF2oGqcYQBA",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-5"
+    },
+    {
+        id: 9,
+        title: "Induksi Matematika",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "hhttps://drive.google.com/uc?export=download&id=12mvWn5DmR3XYahPZxvsBdTnF1KJIRR90",
+        kerjakan: "https://forms.gle/hPDDLuEyjT3vR5oR6",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-6"
+    },
+    {
+        id: 10,
+        title: "Pola Bilangan",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1S3kWq6nqkJN5YwYLoFw-YDyTawFiTPg7",
+        kerjakan: "https://forms.gle/h8LrTZHHv7vgtao79",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-7"
+    },
+    {
+        id: 11,
+        title: "Fungsi Trigonometri",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1FuBG9Fakzfom_r7DFMLCSQu-7kajK4bf",
+        kerjakan: "https://forms.gle/6AkMuvEgyQKvCtin9",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-8"
+    },
+    {
+        id: 12,
+        title: "IFungsi Komposisi dan Invers",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=",
+        kerjakan: "",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-9"
+    },
+    {
+        id: 13,
+        title: "Matriks",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1Z2QYkkSoCyzeUEuEzu0pTDhJl6a-IDhV",
+        kerjakan: "https://forms.gle/ZijcFNb7aJbUqYQQ7",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-10"
+    },
+    {
+        id: 14,
+        title: "Persamaan Trigonometri",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1pPyHH35j-LvAAwU34KlBprXpfYqygnjs",
+        kerjakan: "https://forms.gle/3LXfR1A1oLKfV2S46",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-11"
+    },
+    {
+        id: 15,
+        title: "Suku Banyak(Polinomial)",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1Rhxs8wYNw1I3sC21kFDPa3IqIdj4Rd1J",
+        kerjakan: "https://forms.gle/SNNGcHc4uJqd1DRr6",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-12"
+    },
+    {
+        id: 16,
+        title: "Logika Matematika",
+        author: "Tim UMT",
+        category: "hots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1beShn_KVIpBMii_N05b2sGvrnpNECfxM",
+        kerjakan: "https://forms.gle/uq1FdXRhLxUuhjcz8",
+        nama: "Soal HOTS",
+        indeks: "matematika-hots-13"
+    },
+    // MOTS
+    
+    {
+        id: 17,
+        title: "Relasi dan Fungsi",
+        author: "Tim UMT",
+        category: "mots",
+        free: "free",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1FF1qnnVgZiwZOHab4hS6koKdqFsjf5ga",
+        kerjakan: "https://forms.gle/xk3AiqmL1em5NZjh7",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-1"
+    },
+    {
+        id: 18,
+        title: "Eksponensial (Perpangkatan)",
+        author: "Tim UMT",
+        category: "mots",
+        free: "free",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1ik5_RlBbOVwevgAVNzjIuv_8vxnX0tY7",
+        kerjakan: "https://forms.gle/skxMHwNCoZ7frvvV6",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-2"
+    },
+    {
+        id: 19,
+        title: "Akar Pangkat",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1M8P4qkpkHhvYK56Q8z5BduI9nJAFfpfL",
+        kerjakan: "hhttps://forms.gle/iMPSi4GKRrmN8Q1r7",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-3"
+    },
+    {
+        id: 20,
+        title: "Persamaan Kuadrat",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=11LNVj-nPfr7AcuYCJDwbvhDZlO3iyCmj",
+        kerjakan: "https://forms.gle/yBh6UUR5EYVtiYhC8",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-4"
+    },
+    {
+        id: 21,
+        title: "Fungsi Kuadrat",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1-_VwkGUODMqvMEwjSe_1ZFHhGlobPwtE",
+        kerjakan: "https://forms.gle/vFy7cHXwyrr2ygyL6",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-5"
+    },
+    {
+        id: 22,
+        title: "Induksi Matematika",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1uQsgJOjv4irjvmDSDnwvpW_YmpAt1gbn",
+        kerjakan: "https://forms.gle/KVMQLFZGYK5NuamR7",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-6"
+    },
+    {
+        id: 23,
+        title: "Pola Bilangan",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1G8Vh_t5OQ3WuVUZH3lPy3M1zlfhio8CZ",
+        kerjakan: "https://forms.gle/BAVkHXQKF6iNhhjp8",
+        nama: "Soal HOTS",
+        indeks: "matematika-mots-7"
+    },
+    {
+        id: 24,
+        title: "Fungsi Trigonometri",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=189RL6baO9ybPldJ3iThcnkfKEFMTZsXk",
+        kerjakan: "https://forms.gle/c83bbq7K4dHhxjV38",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-8"
+    },
+    {
+        id: 25,
+        title: "Fungsi Komposisi dan Invers",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=",
+        kerjakan: "#",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-9"
+    },
+    {
+        id: 26,
+        title: "Matriks",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1MNdWN54aZkIW1C06oSfN4uGSH0HuwIJj",
+        kerjakan: "https://forms.gle/mpVgvSqyCr5a7T9V9",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-10"
+    },
+    {
+        id: 27,
+        title: "Persamaan Trigonometri",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1ellHO16HWp7-lnOYS7m_zc3UAlH3npqm",
+        kerjakan: "https://forms.gle/RsQZFH9uAPRkbGDP6",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-11"
+    },
+    {
+        id: 28,
+        title: "Suku Banyak(Polinomial)",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1DvxtIfgRTGe5PV82sC9e4GtQas9UNCgs",
+        kerjakan: "https://forms.gle/MkpjwYrpsKo13otH8",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-12"
+    },
+    {
+        id: 29,
+        title: "Logika Matematika",
+        author: "Tim UMT",
+        category: "mots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1beShn_KVIpBMii_N05b2sGvrnpNECfxM",
+        kerjakan: "https://forms.gle/uq1FdXRhLxUuhjcz8",
+        nama: "Soal MOTS",
+        indeks: "matematika-mots-13"
+    },
+
+    // LOTS
+    {
+        id: 30,
+        title: "Relasi dan Fungsi",
+        author: "Tim UMT",
+        category: "lots",
+        free: "free",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1iBjIemDZEvTgojlk7SzfF-j-gAdYGu6n",
+        kerjakan: "https://forms.gle/pWLLtdcVVRuhVXdW6",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-1"
+    },
+    {
+        id: 5,
+        title: "Eksponensial (Perpangkatan)",
+        author: "Tim UMT",
+        category: "lots",
+        free: "free",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1z1j4I-nMONmHXOGkY7mmaHw8KxGWm8z2",
+        kerjakan: "https://forms.gle/UuDfiP8ohHd6RqN57",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-2"
+    },
+    {
+        id: 6,
+        title: "Akar Pangkat",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1bdxmcazV6klSeaPm5K-JorlHG1y6_cL1",
+        kerjakan: "https://forms.gle/fCPHJC77Mb3Ame7A9",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-3"
+    },
+    {
+        id: 7,
+        title: "Persamaan Kuadrat",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1dFT2G2SgECqtUviPGT064WLuqFFeHGAX",
+        kerjakan: "hhttps://forms.gle/dWmKQkgxPpMwSNnp7",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-4"
+    },
+    {
+        id: 8,
+        title: "Fungsi Kuadrat",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1N7LK0FuxqRhljvZn4x5RN_7_g6JWYRso",
+        kerjakan: "https://forms.gle/ejNfL98ExnvJ3W5Z6",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-5"
+    },
+    {
+        id: 9,
+        title: "Induksi Matematika",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1EuAQXjGeByhTwSlKHZkYpeA-SeuzfXPN",
+        kerjakan: "https://forms.gle/wggrMXHYHaNxQJMv8",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-6"
+    },
+    {
+        id: 10,
+        title: "Pola Bilangan",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1SnSYGI39LcLIB94wMMDYm81kDdaiHTFk",
+        kerjakan: "https://forms.gle/2iH3Cu2QW82Lbra99",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-7"
+    },
+    {
+        id: 11,
+        title: "Fungsi Trigonometri",
+        author: "Tim UMT",
+        category: "Lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1IbX6HHchgxPqGkDP3ZRuWF30Qsb1mjiw",
+        kerjakan: "https://forms.gle/Fmkf8a6onku7JZxm9",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-8"
+    },
+    {
+        id: 12,
+        title: "IFungsi Komposisi dan Invers",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=",
+        kerjakan: "#",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-9"
+    },
+    {
+        id: 13,
+        title: "Matriks",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1xQB9v90BH6qlFnG2ccAZ9sRGcajQV73K",
+        kerjakan: "https://forms.gle/EjvxqTP6fYqg5WNJA",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-10"
+    },
+    {
+        id: 14,
+        title: "Persamaan Trigonometri",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1oUe-Wae5wxAd1hNVBh5-_lfvCfRhjZTT",
+        kerjakan: "https://forms.gle/ShJ9fv5dKXBNAGSa6",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-11"
+    },
+    {
+        id: 15,
+        title: "Suku Banyak(Polinomial)",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1g0yhmycBMEg1TFXp3kcg_VL9lHf9_zWg",
+        kerjakan: "https://forms.gle/Febi4tk5Ah3n3P7t9",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-12"
+    },
+    {
+        id: 16,
+        title: "Logika Matematika",
+        author: "Tim UMT",
+        category: "lots",
+        free: "premium",
+        image: "📝",
+        download: "https://drive.google.com/uc?export=download&id=1OGCtdNgi81Hut9i41LwRupnrv4y6g884",
+        kerjakan: "https://forms.gle/dTPRFnQtKQ1GgN318",
+        nama: "Soal LOTS",
+        indeks: "matematika-lots-13"
+    }
+];
+
+// Variabel global
+let currentPage = 1;
+let filteredCards = [...cardsData];
+const cardsPerPage = 6;
+
+// Elemen DOM
+const cardsGrid = document.getElementById('cardsGrid');
+const paginationContainer = document.getElementById('paginationContainer');
+const searchInput = document.getElementById('searchInput');
+const tabs = document.querySelectorAll('.tab');
+
+// Fungsi untuk membuat HTML kartu
+function createCardHTML(card) {
+    const categoryConfig = {
+        'ujian': { class: 'tag-ujian', text: 'PAS, PTS, UAS & UTS' },
+        'hots': { class: 'tag-hots', text: 'HOTS' },
+        'mots': { class: 'tag-mots', text: 'MOTS' },
+        'lots': { class: 'tag-lots', text: 'LOTS' }
+    };
+
+    const freeConfig = {
+        'free': { class: 'tag-free', text: 'Gratis' },
+        'premium': { class: 'tag-premium', text: 'Premium' }
+    };
+
+    const categoryInfo = categoryConfig[card.category] || { class: 'tag-ujian', text: 'Unknown' };
+    const freeInfo = freeConfig[card.free] || { class: 'tag-free', text: 'Gratis' };
+
+    return `
+        <div class="card" data-category="${card.category}">
+            <div class="card-content">
+                <div class="card-image">
+                    <span>${card.image}</span>
+                </div>
+                <h3 class="card-title">${card.title}</h3>
+                <p class="card-author">oleh ${card.author}</p>
+                <div class="category">
+                    <span class="card-tag ${categoryInfo.class}">${categoryInfo.text}</span>
+                    <span class="card-tag ${freeInfo.class}">${freeInfo.text}</span>
+                </div>
+                <div class="tombol">
+                    <button class="download-button" data-link="${card.download}">Download</button>
+                    <button class="kerjakan-button" data-link="${card.kerjakan}">Kerjakan Soal</button>
+                    <button class="lihat-button" data-nama="${card.nama}" data-indeks="${card.indeks}">Lihat Materi</button>
+                </div>
             </div>
         </div>
-    </div>
+    `;
+}
 
+// Fungsi untuk menampilkan loading state
+function showLoading() {
+    cardsGrid.innerHTML = `
+        <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <p>Memuat data...</p>
+        </div>
+    `;
+}
+
+// Fungsi untuk menampilkan empty state
+function showEmptyState() {
+    cardsGrid.innerHTML = `
+        <div class="empty-state">
+            <div class="empty-state-icon">🔍</div>
+            <h3 class="empty-state-title">Tidak ada hasil ditemukan</h3>
+            <p>Coba ubah kata kunci pencarian atau pilih kategori lain</p>
+        </div>
+    `;
+}
+
+// Fungsi untuk merender kartu
+function renderCards() {
+    if (filteredCards.length === 0) {
+        showEmptyState();
+        paginationContainer.innerHTML = '';
+        return;
+    }
+
+    const startIndex = (currentPage - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const cardsToShow = filteredCards.slice(startIndex, endIndex);
+
+    cardsGrid.innerHTML = cardsToShow.map(card => createCardHTML(card)).join('');
+
+    // Event listener untuk tombol Download
+    const downloadElements = cardsGrid.querySelectorAll('.download-button');
+    downloadElements.forEach((button, index) => {
+        button.style.animationDelay = `${index * 0.1}s`;
         
-    <script>
-        function showTab(tabName) {
-            // Hide all tab contents
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => content.classList.remove('active'));
+        button.addEventListener('click', () => {
+            const link = button.getAttribute('data-link');
+            if (link && link !== '#') {
+                window.open(link, '_blank');
+            } else {
+                alert('Link belum tersedia');
+            }
+        });
+    });
+
+    // Event listener untuk tombol Kerjakan Soal
+    const kerjakanElements = cardsGrid.querySelectorAll('.kerjakan-button');
+    kerjakanElements.forEach((button, index) => {
+        button.style.animationDelay = `${index * 0.1}s`;
+        
+        button.addEventListener('click', () => {
+            const link = button.getAttribute('data-link');
+            if (link && link !== '#') {
+                window.open(link, '_blank');
+            } else {
+                alert('Link belum tersedia');
+            }
+        });
+    });
+
+    // Event listener untuk tombol Lihat Materi - PERBAIKAN UTAMA
+    const lihatElements = cardsGrid.querySelectorAll('.lihat-button');
+    lihatElements.forEach((button, index) => {
+        button.style.animationDelay = `${index * 0.1}s`;
+        
+        button.addEventListener('click', () => {
+            const nama = button.getAttribute('data-nama');
+            const indeks = button.getAttribute('data-indeks');
             
+            if (indeks && indeks !== '') {
+                openMateriModal(nama, indeks);
+            } else {
+                alert('Materi belum tersedia');
+            }
+        });
+    });
+}
+
+function openMateriModal(title, materiId) {
+    const modal = document.getElementById('materiModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    
+    modalTitle.textContent = 'Materi yang Diuji';
+    
+    const materiContent = getMateriContent(materiId);
+    modalBody.innerHTML = materiContent;
+    
+    modal.style.display = 'block';
+}
+
+function closeMateriModal() {
+    document.getElementById('materiModal').style.display = 'none';
+}
+
+function getMateriContent(materiId) {
+    const materiData = {
+        'pas-matematika-1': `
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Fungsi, Persamaan, dan Pertidaksamaan Nilai Mutlak
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Persamaan Nilai Mutlak Linear I, Pertidaksamaan Nilai Mutlak Linear
+                </div>
+            </div>
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Sistem Persamaan Linear
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Sistem Persamaan Linear Tiga Variabel (SPLTV)
+                </div>
+            </div>
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Matriks
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Operasi Hitung Matriks
+                </div>
+            </div>
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Fungsi, Persamaan, dan Pertidaksamaan Linear
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Fungsi Linear
+                </div>
+            </div>
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Fungsi
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Menentukan Domain dan Range Fungsi, Operasi Fungsi
+                </div>
+            </div>
+        `,
+        
+        'matematika-hots-1': `
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Relasi dan Fungsi
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
+                </div>
+            </div>
+        `,
+
+        'matematika-hots-2': `
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                     Eksponensial 
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
+                </div>
+            </div>
+        `,
+        
+        'matematika-hots-3': `
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Akar Pangkat 
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
+                </div>
+            </div>
+        `,
+
+        'matematika-mots-1': `
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Relasi dan Fungsi
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
+                </div>
+            </div>
+        `,
+
+        'matematika-mots-2': `
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                     Eksponensial 
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
+                </div>
+            </div>
+        `,
+        
+        'matematika-mots-3': `
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Akar Pangkat 
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
+                </div>
+            </div>
+        `,
+
+        'matematika-lots-1': `
+            <div class="materi-item">
+                <div class="materi-title">
+                    <span class="materi-icon">⚡</span>
+                    Relasi dan Fungsi
+                </div>
+                <div class="materi-subtitle">
+                    Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
+                </div>
+            </div>
+        `
+    };
+    
+    return materiData[materiId] || `
+        <div class="materi-item">
+            <div class="materi-title">
+                <span class="materi-icon">⚡</span>
+                Materi Belum Tersedia
+            </div>
+            <div class="materi-subtitle">
+                Materi untuk item ini sedang dalam tahap pengembangan
+            </div>
+        </div>
+    `;
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('materiModal');
+    if (event.target == modal) {
+        closeMateriModal();
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeMateriModal();
+    }
+});
+
+// Fungsi untuk membuat pagination
+function createPagination() {
+    const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
+    
+    if (totalPages <= 1) {
+        paginationContainer.innerHTML = '';
+        return;
+    }
+
+    let paginationHTML = '';
+
+    // Tombol Previous
+    const prevDisabled = currentPage === 1 ? 'disabled' : '';
+    paginationHTML += `
+        <button class="pagination-nav ${prevDisabled}" onclick="goToPage(${currentPage - 1})" ${prevDisabled ? 'disabled' : ''}>
+            ← Sebelumnya
+        </button>
+    `;
+
+    // Logic untuk menampilkan nomor halaman
+    const maxVisiblePages = 5;
+    
+    if (totalPages <= maxVisiblePages) {
+        for (let i = 1; i <= totalPages; i++) {
+            const activeClass = i === currentPage ? 'active' : '';
+            paginationHTML += `
+                <button class="pagination-btn ${activeClass}" onclick="goToPage(${i})">
+                    ${i}
+                </button>
+            `;
+        }
+    } else {
+        if (currentPage <= 3) {
+            for (let i = 1; i <= 3; i++) {
+                const activeClass = i === currentPage ? 'active' : '';
+                paginationHTML += `
+                    <button class="pagination-btn ${activeClass}" onclick="goToPage(${i})">
+                        ${i}
+                    </button>
+                `;
+            }
+            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+            paginationHTML += `
+                <button class="pagination-btn" onclick="goToPage(${totalPages})">
+                    ${totalPages}
+                </button>
+            `;
+        } else if (currentPage >= totalPages - 2) {
+            paginationHTML += `
+                <button class="pagination-btn" onclick="goToPage(1)">1</button>
+            `;
+            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+            for (let i = totalPages - 2; i <= totalPages; i++) {
+                const activeClass = i === currentPage ? 'active' : '';
+                paginationHTML += `
+                    <button class="pagination-btn ${activeClass}" onclick="goToPage(${i})">
+                        ${i}
+                    </button>
+                `;
+            }
+        } else {
+            paginationHTML += `
+                <button class="pagination-btn" onclick="goToPage(1)">1</button>
+            `;
+            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+            
+            for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+                const activeClass = i === currentPage ? 'active' : '';
+                paginationHTML += `
+                    <button class="pagination-btn ${activeClass}" onclick="goToPage(${i})">
+                        ${i}
+                    </button>
+                `;
+            }
+            
+            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+            paginationHTML += `
+                <button class="pagination-btn" onclick="goToPage(${totalPages})">
+                    ${totalPages}
+                </button>
+            `;
+        }
+    }
+
+    // Tombol Next
+    const nextDisabled = currentPage === totalPages ? 'disabled' : '';
+    paginationHTML += `
+        <button class="pagination-nav ${nextDisabled}" onclick="goToPage(${currentPage + 1})" ${nextDisabled ? 'disabled' : ''}>
+            Selanjutnya →
+        </button>
+    `;
+
+    paginationContainer.innerHTML = paginationHTML;
+}
+
+// Fungsi untuk pindah halaman
+function goToPage(page) {
+    const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
+    
+    if (page < 1 || page > totalPages || page === currentPage) {
+        return;
+    }
+    
+    // Simulate loading delay for better UX
+    currentPage = page;
+    renderCards();
+    createPagination();
+            
+    // Scroll ke atas setelah pindah halaman
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Fungsi untuk filter berdasarkan kategori - DIPERBAIKI
+function filterByCategory(category) {
+    setTimeout(() => {
+        if (!category || category === 'semua') {
+            filteredCards = [...cardsData];
+        } else {
+            filteredCards = cardsData.filter(card => card.category === category);
+        }
+        currentPage = 1;
+        renderCards();
+        createPagination();
+    }, 300);
+}
+
+// Fungsi untuk pencarian
+function searchCards(query) {
+    const searchTerm = query.toLowerCase().trim();
+    
+    showLoading();
+    
+    setTimeout(() => {
+        if (searchTerm === '') {
+            const activeTab = document.querySelector('.tab.active');
+            const activeCategory = activeTab.getAttribute('data-tab');
+            filterByCategory(activeCategory);
+        } else {
+            filteredCards = cardsData.filter(card => 
+                card.title.toLowerCase().includes(searchTerm) ||
+                card.author.toLowerCase().includes(searchTerm)
+            );
+            currentPage = 1;
+            renderCards();
+            createPagination();
+        }
+    }, 300);
+}
+
+// Event Listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Render initial cards
+    renderCards();
+    createPagination();
+
+    // Tab navigation - DIPERBAIKI
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
             // Remove active class from all tabs
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            // Show selected tab content
-            document.getElementById(tabName).classList.add('active');
+            tabs.forEach(t => t.classList.remove('active'));
             
             // Add active class to clicked tab
-            event.target.classList.add('active');
-        }
-
-        function searchCards(searchTerm) {
-            const activeTab = document.querySelector('.tab-content.active');
-            const cards = activeTab.querySelectorAll('.card');
-            const searchLower = searchTerm.toLowerCase();
+            this.classList.add('active');
             
-            cards.forEach(card => {
-                const title = card.querySelector('.card-title').textContent.toLowerCase();
-                const subtitle = card.querySelector('.card-subtitle').textContent.toLowerCase();
-                
-                if (title.includes(searchLower) || subtitle.includes(searchLower)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        function openMateriModal(title, materiId) {
-            const modal = document.getElementById('materiModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalBody = document.getElementById('modalBody');
-            
-            modalTitle.textContent = 'Materi yang Diuji';
-            
-            const materiContent = getMateriContent(materiId);
-            modalBody.innerHTML = materiContent;
-            
-            modal.style.display = 'block';
-        }
-
-        function closeMateriModal() {
-            document.getElementById('materiModal').style.display = 'none';
-        }
-
-        function getMateriContent(materiId) {
-            const materiData = {
-                'pas-matematika-1': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi, Persamaan, dan Pertidaksamaan Nilai Mutlak
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Persamaan Nilai Mutlak Linear I, Pertidaksamaan Nilai Mutlak Linear
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Sistem Persamaan Linear
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Sistem Persamaan Linear Tiga Variabel (SPLTV)
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Matriks
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Operasi Hitung Matriks
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi, Persamaan, dan Pertidaksamaan Linear
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Fungsi Linear
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Aljabar Fungsi, Jenis Fungsi, Relasi Dan Fungsi
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Komposisi dan Invers
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Fungsi Komposisi, Fungsi Invers, Invers Fungsi Komposisi
-                        </div>
-                    </div>
-                `,
-
-                'pas-matematika-2': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi, Persamaan, dan Pertidaksamaan Kuadrat
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Prasyarat: Fungsi Kuadrat, Pertidaksamaan Kuadrat, Prasyarat: Persamaan Kuadrat
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Sistem Persamaan & Pertidaksamaan Linear-Kuadrat Dua Variabel (SPLKDV)
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Sistem Pertidaksamaan Linear Dua Variabel, Sistem Persamaan dan Pertidaksamaan Linear Kuadrat Dua Variabel
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi, Persamaan, dan Pertidaksamaan Linear
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Persamaan Linear, Pertidaksamaan Linear
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Sistem Persamaan Linear
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Sistem Persamaan Linear Tiga Variabel (SPLTV), Prasyarat: SPLDV
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi, Persamaan, dan Pertidaksamaan Rasional
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pertidaksamaan Rasional
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi, Persamaan, dan Pertidaksamaan Irasional (Bentuk Akar)
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pertidaksamaan Irasional (Bentuk Akar)
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Barisan dan Deret
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Prasyarat: Barisan dan Deret 
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi, Persamaan, dan Pertidaksamaan Nilai Mutlak 
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pertidaksamaan Nilai Mutlak Linear, Fungsi Nilai Mutlak, Persamaan Nilai Mutlak Linear I, Pertidaksamaan Nilai Mutlak Nonlinear
-                        </div>
-                    </div>
-                `,
-
-                'pas-matematika-3': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Persamaan Linear
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Persamaan Linear Sederhana, Persamaan dengan Pecahan, Persamaan dengan Variabel di Kedua Sisi, Persamaan Eksponen
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Pertidaksamaan Linear
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pertidaksamaan Linear Sederhana, Pertidaksamaan dengan Pecahan, Pertidaksamaan dengan Variabel di Kedua Sisi, Pertidaksamaan dengan Koefisien Negatif
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Geometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Segitiga (Luas, Keliling, Sisi Miring), Lingkaran (Luas, Keliling, Jari-jari), Persegi Panjang, Persegi, Jajar Genjang, Trapesium, Volume Bangun Ruang(Balok, Kubus, Tabung), Teorema Pythagoras
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Deret Aritmetika/Geometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Suku ke-n Deret Aritmetika/Geometri, Jumlah Suku Pertama Deret Aritmetika/Geometri, Rasio atau Beda dalam Deret, Aplikasi Deret dalam Soal Cerita
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Trigonometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Identitas Trigonometri Dasar (sin, cos, tan), Nilai Trigonometri di Berbagai Kuadran, Hubungan Antara Sudut-sudut Istimewa, Aplikasi Trigonometri dalam Soal Cerita
-                        </div>
-                    </div>
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Statistika
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Rata-rata (Mean), Median, Modus, Aplikasi Statistika dalam Soal Cerita
-                        </div>
-                    </div>
-                `,
-                // 'uts-biologi': `
-                //     <div class="materi-item">
-                //         <div class="materi-title">
-                //             <span class="materi-icon">⚡</span>
-                //             Biologi Sel
-                //         </div>
-                //         <div class="materi-subtitle">
-                //             Subbab: Struktur Sel, Organel, Metabolisme Sel
-                //         </div>
-                //     </div>
-                //     <div class="materi-item">
-                //         <div class="materi-title">
-                //             <span class="materi-icon">⚡</span>
-                //             Genetika
-                //         </div>
-                //         <div class="materi-subtitle">
-                //             Subbab: DNA, RNA, Sintesis Protein
-                //         </div>
-                //     </div>
-                // `,
-
-                // Khusus HOTS
-
-                'matematika-hots-1': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Relasi dan Fungsi
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-2': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                             Eksponensial 
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
-                        </div>
-                    </div>
-                `,
-                
-                'matematika-hots-3': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Akar Pangkat 
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-4': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Persamaan Kuadrat
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Persamaan Kuadrat, Faktorisasi pada Persamaan Kuadrat, Kuadrat Sempurna dan Rumus Kuadratik, Jumlah, Hasil Kali, dan Selisih Akar Persamaan Kuadrat, Menyusun Persamaan Kuadrat Baru
-                        </div>
-                    </div>
-                `,
-                
-                'matematika-hots-5': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Kuadrat
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengenalan Fungsi Kuadrat, Titik Potong Sumbu, Titik Puncak, Menentukan Fungsi Kuadrat dari Parabola
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-6': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Induksi Matematika
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Konsep Dasar Induksi Matematika, Induksi Matematika 1 (Kesamaan), Induksi Matematika 2 (Ketaksamaan), Induksi Matematika 3 (Keterbagian)
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-7': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Pola Bilangan
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Barisan dan deret Aritmetika, Barisan dan deret Geometri
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-8': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Trigonometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Derajat dan radian, Perbandingan sisi (Trigonometri), Sudut Istimewa (Trigonometri), Kuadran Pada Trigonometri, Fungsi Trigonometri, Sudut Berelasi 1, Sudut Berelasi 2, Identitas Trigonometri, Aturan Sinus, Aturan Cosinus
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-9': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Komposisi dan Invers
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Fungsi Komposisi, Fungsi Invers, Invers Fungsi Komposisi
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-10': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Matriks
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Matriks, Operasi Hitung Matriks, Invers Matriks, Determinan Matriks. Invers Matriks 3×3, Aplikasi Matriks
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-11': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Persamaan Trigonometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Persamaan Trigonometri Dasar, Persamaan Trigonometri Lanjutan
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-12': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Suku Banyak / Polinomial
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Suku Banyak, Operasi Hitung Suku Banyak, Teorema sisa dan faktor, Persamaan dan Pertiadaksamaan Suku Banyak
-                        </div>
-                    </div>
-                `,
-
-                'matematika-hots-13': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Logika Matematika
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Kalimat, konjungsi dan disjungsi , implikasi dan biimplikasi, ingkaran dan ekuivalensi, penarikan kesimpulan
-                        </div>
-                    </div>
-                `,
-                
-                // bagian MOTS
-
-                'matematika-mots-1': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Relasi dan Fungsi
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-2': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                             Eksponensial 
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
-                        </div>
-                    </div>
-                `,
-                
-                'matematika-mots-3': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Akar Pangkat 
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-4': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Persamaan Kuadrat
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Persamaan Kuadrat, Faktorisasi pada Persamaan Kuadrat, Kuadrat Sempurna dan Rumus Kuadratik, Jumlah, Hasil Kali, dan Selisih Akar Persamaan Kuadrat, Menyusun Persamaan Kuadrat Baru
-                        </div>
-                    </div>
-                `,
-                
-                'matematika-mots-5': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Kuadrat
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengenalan Fungsi Kuadrat, Titik Potong Sumbu, Titik Puncak, Menentukan Fungsi Kuadrat dari Parabola
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-6': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Induksi Matematika
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Konsep Dasar Induksi Matematika, Induksi Matematika 1 (Kesamaan), Induksi Matematika 2 (Ketaksamaan), Induksi Matematika 3 (Keterbagian)
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-7': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Pola Bilangan
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Barisan dan deret Aritmetika, Barisan dan deret Geometri
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-8': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Trigonometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Derajat dan radian, Perbandingan sisi (Trigonometri), Sudut Istimewa (Trigonometri), Kuadran Pada Trigonometri, Fungsi Trigonometri, Sudut Berelasi 1, Sudut Berelasi 2, Identitas Trigonometri, Aturan Sinus, Aturan Cosinus
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-9': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Komposisi dan Invers
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Fungsi Komposisi, Fungsi Invers, Invers Fungsi Komposisi
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-10': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Matriks
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Matriks, Operasi Hitung Matriks, Invers Matriks, Determinan Matriks. Invers Matriks 3×3, Aplikasi Matriks
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-11': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Persamaan Trigonometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Persamaan Trigonometri Dasar, Persamaan Trigonometri Lanjutan
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-12': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Suku Banyak / Polinomial
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Suku Banyak, Operasi Hitung Suku Banyak, Teorema sisa dan faktor, Persamaan dan Pertiadaksamaan Suku Banyak
-                        </div>
-                    </div>
-                `,
-
-                'matematika-mots-13': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Logika Matematika
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Kalimat, konjungsi dan disjungsi , implikasi dan biimplikasi, ingkaran dan ekuivalensi, penarikan kesimpulan
-                        </div>
-                    </div>
-                `,
-                
-                // bagian LOTS
-
-                'matematika-lots-1': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Relasi dan Fungsi
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengantar Relasi, Jenis-jenis Relasi, Fungsi sebagai Relasi Khusus, Domain-Kodomain-Range, Notasi dan Representasi Fungsi
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-2': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                             Eksponensial 
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Bilangan Berpangkat, Fungsi, Persamaan dan Pertidaksamaan Eksponen
-                        </div>
-                    </div>
-                `,
-                
-                'matematika-lots-3': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Akar Pangkat 
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Bentuk Akar, Fungsi, Persamaan Dan Pertidaksamaan Bentuk Akar
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-4': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Persamaan Kuadrat
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Persamaan Kuadrat, Faktorisasi pada Persamaan Kuadrat, Kuadrat Sempurna dan Rumus Kuadratik, Jumlah, Hasil Kali, dan Selisih Akar Persamaan Kuadrat, Menyusun Persamaan Kuadrat Baru
-                        </div>
-                    </div>
-                `,
-                
-                'matematika-lots-5': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Kuadrat
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengenalan Fungsi Kuadrat, Titik Potong Sumbu, Titik Puncak, Menentukan Fungsi Kuadrat dari Parabola
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-6': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Induksi Matematika
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Konsep Dasar Induksi Matematika, Induksi Matematika 1 (Kesamaan), Induksi Matematika 2 (Ketaksamaan), Induksi Matematika 3 (Keterbagian)
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-7': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Pola Bilangan
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Barisan dan deret Aritmetika, Barisan dan deret Geometri
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-8': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Trigonometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Derajat dan radian, Perbandingan sisi (Trigonometri), Sudut Istimewa (Trigonometri), Kuadran Pada Trigonometri, Fungsi Trigonometri, Sudut Berelasi 1, Sudut Berelasi 2, Identitas Trigonometri, Aturan Sinus, Aturan Cosinus
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-9': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Fungsi Komposisi dan Invers
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Fungsi Komposisi, Fungsi Invers, Invers Fungsi Komposisi
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-10': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Matriks
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Matriks, Operasi Hitung Matriks, Invers Matriks, Determinan Matriks. Invers Matriks 3×3, Aplikasi Matriks
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-11': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Persamaan Trigonometri
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Persamaan Trigonometri Dasar, Persamaan Trigonometri Lanjutan
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-12': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Suku Banyak / Polinomial
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Pengertian Suku Banyak, Operasi Hitung Suku Banyak, Teorema sisa dan faktor, Persamaan dan Pertiadaksamaan Suku Banyak
-                        </div>
-                    </div>
-                `,
-
-                'matematika-lots-13': `
-                    <div class="materi-item">
-                        <div class="materi-title">
-                            <span class="materi-icon">⚡</span>
-                            Logika Matematika
-                        </div>
-                        <div class="materi-subtitle">
-                            Subbab: Kalimat, konjungsi dan disjungsi , implikasi dan biimplikasi, ingkaran dan ekuivalensi, penarikan kesimpulan
-                        </div>
-                    </div>
-                `
-            };
-            
-            return materiData[materiId] || materiData['default'];
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('materiModal');
-            if (event.target == modal) {
-                closeMateriModal();
-            }
-        }
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeMateriModal();
-            }
+            // Filter cards based on selected tab
+            const category = this.getAttribute('data-tab') || 'semua';
+            filterByCategory(category);
         });
-        // Dropdown functionality
-        const dropdown = document.getElementById('umtDropdown');
-        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+    });
 
-        dropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-        dropdown.classList.toggle('active');
-        });
+    // Search functionality
+    searchInput.addEventListener('input', function(e) {
+        const query = e.target.value;
+        searchCards(query);
+    });
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('active');
-        }
-        });
-
-        // Prevent dropdown from closing when clicking inside the menu
-        dropdown.querySelector('.dropdown-menu').addEventListener('click', (e) => {
+    // Dropdown functionality
+    const dropdown = document.getElementById('umtDropdown');
+    const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+    
+    dropdownToggle.addEventListener('click', function(e) {
         e.stopPropagation();
-        });
+        dropdown.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+
+    // Close dropdown when pressing Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            dropdown.classList.remove('active');
+        }
+    });
+
+    // Keyboard navigation for pagination
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft' && currentPage > 1) {
+            goToPage(currentPage - 1);
+        } else if (e.key === 'ArrowRight') {
+            const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
+            if (currentPage < totalPages) {
+                goToPage(currentPage + 1);
+            }
+        }
+    });
+
+    // Handle search with Enter key
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const query = e.target.value;
+            searchCards(query);
+        }
+    });
+});
+
+// Function to handle window resize for responsive design
+window.addEventListener('resize', function() {
+    // Recalculate pagination if needed
+    createPagination();
+});
+
+// Function to add smooth scroll behavior
+function smoothScrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Performance optimization: Debounce search function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Apply debouncing to search
+const debouncedSearch = debounce(searchCards, 300);
+
+// Update search input event listener with debounced version
+searchInput.addEventListener('input', function(e) {
+    const query = e.target.value;
+    debouncedSearch(query);
+});
+
+// Add loading state management
+let isLoading = false;
+
+function setLoadingState(loading) {
+    isLoading = loading;
+    if (loading) {
+        document.body.style.cursor = 'wait';
+    } else {
+        document.body.style.cursor = 'default';
+    }
+}
+
+// Enhanced error handling
+function handleError(error) {
+    console.error('Error:', error);
+    cardsGrid.innerHTML = `
+        <div class="empty-state">
+            <div class="empty-state-icon">⚠️</div>
+            <h3 class="empty-state-title">Terjadi Kesalahan</h3>
+            <p>Mohon coba lagi dalam beberapa saat</p>
+        </div>
+    `;
+}
+
+// Initialize tooltips or other interactive elements if needed
+function initializeInteractiveElements() {
+    // Add any additional interactive features here
+    console.log('Bank Soal UMT Platform initialized successfully');
+}
+
+// Call initialization
+initializeInteractiveElements();
     </script>
 </body>
 </html>
+            
